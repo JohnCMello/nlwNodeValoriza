@@ -1,3 +1,4 @@
+import { getCustomRepository } from "typeorm"
 import { usersRepos } from "../repos/UsersRepos";
 
 interface IUserRequest {
@@ -9,7 +10,7 @@ interface IUserRequest {
 class CreateUserService {
 
   async execute({ name, email, admin }: IUserRequest) {
-    const usersRepository = new usersRepos();
+    const usersRepository = getCustomRepository(usersRepos);
 
     if (!email) {
       throw new Error("Email not provided. Please, provide an email account.")
