@@ -30,3 +30,7 @@ yarn add typeorm reflect-metadata sqlite3
 yarn typeorm migration:create -n CreateUsers
 ```
 
+```
+yarn add express-async-errors
+```
+
